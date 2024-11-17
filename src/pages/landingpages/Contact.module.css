@@ -1,0 +1,142 @@
+.pageContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgb(250, 250, 250);
+}
+
+.pageContent {
+    /* border: 1px solid black; */
+    height: 100vh;
+    width: 100%; /* Make width responsive */
+    max-width: 83em; /* Set max width to 80em */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    padding-top: 1rem;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.navbar{
+    margin-right: 20em;
+    color: #6d6d6d;
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar span{
+    cursor: pointer;
+}
+
+.dustLogo {
+    width: auto;
+    height: 4em;
+}
+
+.content{
+    width: 100%;
+    height: 30em;
+    display: flex;
+    gap: 15rem;
+    justify-content: start;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+}
+
+.parentCard{
+    margin-top: 3rem;
+    position: relative;
+}
+
+.parentCard img{
+    width: 18em;
+    height: 18em;
+    object-fit: cover;
+    border-bottom: .8em solid white;
+    border-right: .8em solid white;
+    border-bottom-right-radius: 1rem;
+}
+
+.childCard1{
+    position: absolute;
+    top: -1em;
+    right: -10em;
+    width: 16em;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+    background-color: #8ab934;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.childCard2{
+    position: absolute;
+    z-index: -1;
+    left: -1rem;
+    bottom: -1rem;
+    width: auto;
+    height: 13em;
+    background-color: #253d5e;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.childHeader{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #253d5e;
+}
+
+.childContent{
+    font-size: .9rem;
+    color: #253d5e;
+    line-height: 1.1;
+}
+
+.contentHeader{
+    margin-top: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #253d5e;
+}
+
+.detailsHolder{
+    margin-left: 23rem;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+}
+
+.contact, .location, .social{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 8em;
+    gap: 5px;
+}

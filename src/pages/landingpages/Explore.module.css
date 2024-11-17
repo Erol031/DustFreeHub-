@@ -1,0 +1,131 @@
+.pageContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(250, 250, 250);
+}
+
+.pageContent {
+    /* border: 1px solid black; */
+    height: 100vh;
+    width: 100%; /* Make width responsive */
+    max-width: 80em; /* Set max width to 80em */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    padding-top: 1rem;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.navbar{
+    margin-right: 20em;
+    color: #6d6d6d;
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar span{
+    cursor: pointer;
+}
+
+.dustLogo {
+    width: auto;
+    height: 4em;
+}
+
+.content{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    position: relative;
+}
+
+.content span{
+    margin: 1rem;
+    width: auto;
+    color: #253d5e;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.headerContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardGroup{
+    width: 70em;
+    height: auto;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+}
+
+.card{
+    background-color: #253d5e;
+    border-radius: 1rem;
+    width: 15em;
+    padding: 1rem 2rem 1rem 2rem;
+    min-height: 25em;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: .5rem solid white;
+}
+
+.serviceHeader{
+    color: white;
+    font-weight: bold;
+}
+
+.serviceBio{
+    color: rgb(220, 220, 220);
+    line-height: 1.1;
+}
+
+.serviceButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 1rem .5rem 1rem;
+    background-color: #8ab934;
+    color: #253d5e;
+    font-weight: bold;
+    border-radius: 1rem;
+}
+
+.serviceRating{
+    color: white;
+}

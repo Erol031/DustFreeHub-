@@ -1,0 +1,137 @@
+.pageContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgb(250, 250, 250);
+}
+
+.pageContent {
+    /* border: 1px solid black; */
+    height: 100vh;
+    width: 100%; /* Make width responsive */
+    max-width: 80em; /* Set max width to 80em */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    padding-top: 1rem;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.navbar{
+    margin-right: 20em;
+    color: #6d6d6d;
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar span{
+    cursor: pointer;
+}
+
+.dustLogo {
+    width: auto;
+    height: 4em;
+}
+
+.content{
+    width: 100%;
+    height: 30em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.designCircle{
+    position: absolute;
+    width: 35em;
+    height: 15em;
+    background-color: #8ab934;
+    border-radius: 1rem;
+    z-index: 1;
+    bottom: -0;
+    left: -150px;
+}
+.designCircle2{
+    position: absolute;
+    width: 30em;
+    height: 30em;
+    background-color: #8ab934;
+    z-index: 1;
+    border-radius: 50%;
+    top: -300px;
+    right: -300px;
+}
+
+.leftContent{
+    /* border: 2px solid pink; */
+    width: 28em;
+    height: 28em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.rightContent{
+    border-radius: 1rem;
+    width: 20em;
+    height: 20em;
+    display: flex;
+    justify-content: center;
+    padding: 1em 1.5em 1em 1.5em;
+    align-items: start;
+    color: #0d522c;
+    flex-direction: column;
+    z-index: 2;
+}
+
+
+.homeImage{
+    width: 30em;
+    height: 20em;
+    border-radius: 1rem;
+    border: 1rem solid white;
+    object-fit:  cover;
+}
+
+.contentHeader{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #253d5e;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.contentHeader span{
+    color: #8ab934;
+}
+
+.text{
+    color: #6d6d6d;
+    font-size: .9rem;
+}
+.text i{
+    padding-right: 1rem;
+    color: #8ab934;
+}

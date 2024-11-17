@@ -1,0 +1,144 @@
+.pageContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgb(250, 250, 250);
+}
+
+.pageContent {
+    /* border: 1px solid black; */
+    height: 100vh;
+    width: 100%; /* Make width responsive */
+    max-width: 80em; /* Set max width to 80em */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    padding-top: 1rem;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.navbar{
+    margin-right: 20em;
+    color: #6d6d6d;
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar span{
+    cursor: pointer;
+}
+
+.dustLogo {
+    width: auto;
+    height: 4em;
+}
+
+.content{
+    /* border: 1px solid brown; */
+    width: 100%;
+    height: 30em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.designCircle{
+    position: absolute;
+    width: 35em;
+    height: 35em;
+    background-color: #253d5e;
+    z-index: 1;
+    border-radius: 50%;
+    bottom: -150px;
+    left: -150px;
+}
+.designCircle2{
+    position: absolute;
+    width: 30em;
+    height: 30em;
+    background-color: #8ab934;
+    z-index: 1;
+    border-radius: 50%;
+    top: -300px;
+    right: -300px;
+}
+
+.leftContent{
+    /* border: 2px solid pink; */
+    width: 28em;
+    height: 28em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.rightContent{
+    background: #253d5e;
+    border-radius: 1rem;
+    width: 25em;
+    height: 20em;
+    display: flex;
+    padding: 1em 1.5em 1em 1.5em;
+    align-items: start;
+    justify-content: space-around;
+    color: #0d522c;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.rcHeader{
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+.rcContent{
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.exploreButton{
+    color: #253d5e;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: .5rem;
+    background-color: #8ab934;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.exploreButton:hover{
+    filter: brightness(.8);
+}
+
+.homeImage{
+    width: 25em;
+    height: 25em;
+    border-radius: 50%;
+    border: .9rem solid #8ab934;
+    object-fit: cover;
+    background-position: center;
+}

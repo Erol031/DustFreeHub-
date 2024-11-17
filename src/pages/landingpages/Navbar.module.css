@@ -1,0 +1,71 @@
+.header {
+    width: 100%;
+    padding-top: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.navbar {
+    margin-right: 20em;
+    color: #6d6d6d;
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative; /* Important for dropdown positioning */
+}
+
+.navbar span {
+    cursor: pointer;
+    position: relative; /* Needed for hover styles on dropdowns */
+}
+
+.dustLogo {
+    width: auto;
+    height: 4em;
+}
+
+/* Dropdown container */
+.navItemWithDropdown {
+    position: relative;
+}
+
+.dropdown {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%; /* Aligns dropdown below the "Explore" text */
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 12em;
+    text-align: left;
+}
+
+/* Dropdown items */
+.dropdown span {
+    padding: 0.5rem 1rem;
+    color: #6d6d6d;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.dropdown span:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+}
+
+/* Show dropdown on hover */
+.navItemWithDropdown:hover .dropdown {
+    display: flex; /* Flex for vertical stacking */
+}
