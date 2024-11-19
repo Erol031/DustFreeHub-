@@ -150,6 +150,7 @@
     color: #253d5e;
     background-color: #8ab934;
     border-radius: 2rem;
+    cursor:pointer;
 }
 
 .rating{
@@ -203,3 +204,4 @@
     background-color: #8ab934;
     border-radius: 2rem;
 }
+

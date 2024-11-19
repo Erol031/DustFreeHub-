@@ -10,7 +10,7 @@ function HomePage() {
     const navigate = useNavigate();
 
     const handleExplore = () => {
-        navigate("/explore");
+        navigate("/reviews");
     }
 
     return (

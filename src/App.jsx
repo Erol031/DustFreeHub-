@@ -9,6 +9,7 @@ import About from './pages/landingpages/About';
 import Contact from './pages/landingpages/Contact';
 import PrivateRoute from './PrivateRoute';
 import Profile from './pages/landingpages/Profile';
+import Reviews from './pages/landingpages/Reviews';
 
 function App() {
   const location = useLocation();
@@ -59,6 +60,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Profile />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/reviews"
+            element={
+              <PrivateRoute>
+                <Reviews />
               </PrivateRoute>
             }
           />
