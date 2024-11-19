@@ -98,9 +98,10 @@
     background: #253d5e;
     border-radius: 1rem;
     width: 25em;
-    height: 20em;
+    height: auto;
     display: flex;
-    padding: 1em 1.5em 1em 1.5em;
+    gap: 1rem;
+    padding: 2rem;
     align-items: start;
     justify-content: space-around;
     color: #0d522c;
@@ -112,7 +113,7 @@
     color: white;
     font-size: 3rem;
     font-weight: bold;
-    line-height: 1.3;
+    line-height: 1.1;
 }
 .rcContent{
     color: white;

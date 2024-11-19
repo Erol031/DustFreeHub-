@@ -8,6 +8,7 @@ import Explore from './pages/landingpages/Explore';
 import About from './pages/landingpages/About';
 import Contact from './pages/landingpages/Contact';
 import PrivateRoute from './PrivateRoute';
+import Profile from './pages/landingpages/Profile';
 
 function App() {
   const location = useLocation();
@@ -50,6 +51,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Contact />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <Profile />
               </PrivateRoute>
             }
           />

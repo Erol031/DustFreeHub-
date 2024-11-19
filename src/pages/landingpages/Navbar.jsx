@@ -55,7 +55,7 @@ function Navbar() {
               <span
                 onClick={() => handleNavigation("/explore")}
               >
-                General Cleaning
+                All Cleaning
               </span>
 
               {/* Dynamically generate dropdown options with docuID */}

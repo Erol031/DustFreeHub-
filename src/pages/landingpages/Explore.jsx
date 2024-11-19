@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "../landingpages/Explore.module.css";
 import Navbar from "./Navbar";
 import { db } from "../../firebase/firebase";
@@ -9,12 +9,11 @@ function Explore() {
     const [services, setServices] = useState([]);
     const [categoryName, setCategoryName] = useState(""); // State for category name
     const location = useLocation();
-    
-    // Extract category from query string
+    const navigate = useNavigate(); // To navigate to the profile page
+
     const queryParams = new URLSearchParams(location.search);
     const categoryId = queryParams.get("category");
 
-    // Fetch the selected category name based on categoryId
     useEffect(() => {
         const fetchCategoryName = async () => {
             if (categoryId) {
@@ -70,14 +69,20 @@ function Explore() {
         };
 
         fetchServices();
-    }, [categoryId]); // Re-run when categoryId changes
+    }, [categoryId]);
+
+    const handleViewProfile = (serviceId) => {
+        console.log(`Service ID: ${serviceId}`); // Debug: Log the service ID
+        
+        navigate(`/profile?view=${serviceId}`);
+    };
 
     return (
         <div className={styles.pageContainer}>
             <div className={styles.pageContent}>
                 <Navbar />
                 <div className={styles.content}>
-                    <span>Featured Providers:<span style={{ color: "#8ab934" }}>{categoryName}</span></span> 
+                    <span>Featured Providers: <span style={{ color: "#8ab934" }}>{categoryName}</span></span>
                     <div className={styles.headerContent}>
                         <div className={styles.cardGroup}>
                             {services.map((service) => (
@@ -86,7 +91,12 @@ function Explore() {
                                     <div className={styles.serviceHeader}>{service.serviceName}</div>
                                     <div className={styles.serviceBio}>{service.bio}</div>
                                     <div className={styles.serviceRating}>Rating</div>
-                                    <div className={styles.serviceButton}>View Profile</div>
+                                    <div
+                                        className={styles.serviceButton}
+                                        onClick={() => handleViewProfile(service.serviceId)}
+                                    >
+                                        View Profile
+                                    </div>
                                 </div>
                             ))}
                         </div>

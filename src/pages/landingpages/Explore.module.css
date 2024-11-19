@@ -87,8 +87,8 @@
 .card{
     background-color: #253d5e;
     border-radius: 1rem;
-    width: 15em;
-    padding: 1rem 2rem 1rem 2rem;
+    width: 20em;
+    padding: 2rem;
     min-height: 25em;
     height: auto;
     display: flex;
@@ -124,6 +124,7 @@
     color: #253d5e;
     font-weight: bold;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .serviceRating{

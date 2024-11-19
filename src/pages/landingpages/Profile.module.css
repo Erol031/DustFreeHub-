@@ -1,0 +1,205 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+.pageContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgb(250, 250, 250);
+}
+
+.pageContent {
+    /* border: 1px solid black; */
+    height: 100vh;
+    width: 100%; /* Make width responsive */
+    max-width: 80em; /* Set max width to 80em */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    padding-top: 1rem;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.navbar{
+    margin-right: 20em;
+    color: #6d6d6d;
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar span{
+    cursor: pointer;
+}
+
+.dustLogo {
+    width: auto;
+    height: 4em;
+}
+
+.content{
+    width: 100%;
+    height: 35em;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+}
+
+.designCircle{
+    position: absolute;
+    width: 30em;
+    height: 30em;
+    background-color: #253d5e;
+    z-index: 1;
+    border-radius: 50%;
+    bottom: -300px;
+    left: -200px;
+}
+.designCircle2{
+    position: absolute;
+    width: 30em;
+    height: 30em;
+    background-color: #8ab934;
+    z-index: 1;
+    border-radius: 50%;
+    top: -350px;
+    right: -350px;
+}
+
+.firstContainer{
+    z-index: 3;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profileHolder{
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.serviceImg{
+    outline: 1px solid grey;
+    width: 15em;
+    height: 15em;
+    border-radius: 2rem;
+    border: 8px solid white;
+    z-index: 2;
+}
+
+.serviceDetails{
+    height: 13.8em;
+    width: 70%;
+    background-color: #253d5e;
+    border-radius: 1rem;
+    margin-left: -8px;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.serviceHeader{
+    font-weight: bold;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.serviceDescription{
+    color: white;
+    font-size: 1rem;
+    width: 50%;
+}
+
+.revratingHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.reviewsButton{
+    padding: .5rem 1.5rem;
+    font-weight: bold;
+    color: #253d5e;
+    background-color: #8ab934;
+    border-radius: 2rem;
+}
+
+.rating{
+    margin-right: 3rem;
+}
+
+.subCategoryContainer{
+    height: 50%;
+    width: 100%;
+    flex-wrap: wrap;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+}
+
+.card{
+    background-color: #8ab934;
+    color: #253d5e;
+    height: 14em;
+    width: 18em;
+    z-index: 3;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    border: 8px solid white;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.details{
+    font-size: 1rem;
+    text-align: center;
+}
+
+
+
+.bookingButton{
+    padding: .5rem 1rem;
+    font-weight: bold;
+    color: #253d5e;
+    background-color: #8ab934;
+    border-radius: 2rem;
+}
