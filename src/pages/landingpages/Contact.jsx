@@ -29,12 +29,12 @@ function Contact() {
                                 <div className={styles.social}>
                                     <i class="fa-solid fa-link" style={{fontSize:"2rem", color:"#8ab934"}}></i>
                                     <span style={{fontSize:"1rem", fontWeight:"bold"}}>Social Media</span>
-                                    <span style={{fontSize:"1rem"}}>09196812788</span>
+                                    <span style={{fontSize:"1rem"}}>dustfreehub@gmail.com</span>
                                 </div>
                                 <div className={styles.location}>
                                 <i class="fa-solid fa-location-dot" style={{fontSize:"2rem", color:"#8ab934"}}></i>
                                     <span style={{fontSize:"1rem", fontWeight:"bold"}}>Address</span>
-                                    <span style={{fontSize:"1rem"}}>09196812788</span>
+                                    <span style={{fontSize:"1rem"}}>San Fernando, Pampanga</span>
                                 </div>
                             </div>
                         </div>

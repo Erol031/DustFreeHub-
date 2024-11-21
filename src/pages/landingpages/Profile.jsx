@@ -133,7 +133,18 @@ function Profile() {
                             )}
                         </div>
                         <div className={styles.bookingButton}>
-                            Book now!
+                            {serviceDetails && serviceDetails.booking ? (
+                                <a 
+                                    href={serviceDetails.booking} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className={styles.bookingLink} // Optional: Add styles for the link
+                                >
+                                    Book now!
+                                </a>
+                            ) : (
+                                "Book now!"
+                            )}
                         </div>
                     </div>
                     <div className={styles.subCategoryContainer}>

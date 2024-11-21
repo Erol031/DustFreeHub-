@@ -137,6 +137,6 @@
     color: white;
     display: flex;
     flex-direction: column;
-    width: 8em;
+    width: 12em;
     gap: 5px;
 }
