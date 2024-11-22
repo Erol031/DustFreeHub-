@@ -39,7 +39,7 @@ function Navbar() {
 
   return (
     <div className={styles.header}>
-      <img src={logo} alt="Dust Free Hub Logo" className={styles.dustLogo} />
+      <img src={logo} alt="Dust Free Hub Logo" className={styles.dustLogo} onClick={() => handleNavigation("/home")}/>
       <div className={styles.navbar}>
         <span onClick={() => handleNavigation("/home")}>Home</span>
 

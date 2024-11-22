@@ -32,11 +32,15 @@ function About() {
                             </div>
                             <div className={styles.text}>
                                 <i class="fa-solid fa-circle-check"></i>
-                                <span>Affordable and transparent pricing</span>
+                                <span>Wide selection of cleaning services</span>
                             </div>
                             <div className={styles.text}>
                                 <i class="fa-solid fa-circle-check"></i>
-                                <span>Wide selection of cleaning services</span>
+                                <span>Support local cleaning businesses</span>
+                            </div>
+                            <div className={styles.text}>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Marketing and visibility</span>
                             </div>
                         </div>
                     </div>

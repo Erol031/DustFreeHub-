@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getAuth } from "firebase/auth";
 import { useLocation } from "react-router-dom";
 import { db } from "../../firebase/firebase";
-import { doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
+import { doc, getDoc, updateDoc, arrayUnion, onSnapshot } from "firebase/firestore";
 import styles from "./Reviews.module.css";
 import Navbar from "./Navbar";
 
@@ -119,6 +119,21 @@ function Reviews() {
         }
     };
     
+    useEffect(() => {
+        if (serviceId) {
+            const reviewsDocRef = doc(db, "reviews", serviceId);
+            const unsubscribe = onSnapshot(reviewsDocRef, (snapshot) => {
+                if (snapshot.exists()) {
+                    setReviews(snapshot.data().reviews || []);
+                } else {
+                    console.error("No reviews found for this service!");
+                    setReviews([]);
+                }
+            });
+    
+            return () => unsubscribe();
+        }
+    }, [serviceId]);
 
     return (
         <>

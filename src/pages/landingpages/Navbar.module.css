@@ -28,6 +28,7 @@
 .dustLogo {
     width: auto;
     height: 4em;
+    cursor: pointer;
 }
 
 /* Dropdown container */
