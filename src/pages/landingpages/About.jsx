@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
 
-function About() {
+function About({user}) {
 
     
     return (
         <div className={styles.pageContainer}>
             <div className={styles.pageContent}>
-                <Navbar/>
+                <Navbar user={user}/>
                 <div className={styles.content}>
                     <div className={styles.designCircle}></div>
                     <div className={styles.designCircle2}></div>

@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import { db } from "../../firebase/firebase";
 import { collection, getDocs, doc, getDoc, query, where } from "firebase/firestore";
 
-function Explore() {
+function Explore({ user }) {
     const [services, setServices] = useState([]); // Store services data
     const [categoryName, setCategoryName] = useState(""); // Store category name
     const [ratings, setRatings] = useState({}); // Store ratings for each service
@@ -135,7 +135,7 @@ function Explore() {
     return (
         <div className={styles.pageContainer}>
             <div className={styles.pageContent}>
-                <Navbar />
+                <Navbar user={user}/>
                 <div className={styles.content}>
                     <span>Featured Providers: <span style={{ color: "#8ab934" }}>{categoryName}</span></span>
                     <div className={styles.headerContent}>

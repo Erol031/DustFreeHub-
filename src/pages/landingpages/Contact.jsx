@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
 
-function Contact() {
+function Contact({user}) {
 
 
     return (
         <div className={styles.pageContainer}>
             <div className={styles.pageContent}>
-                <Navbar/>
+                <Navbar user={user}/>
                 <div className={styles.content}>
                     <div className={styles.parentCard}>
                         <img src={contactImage} alt="ShakeHands Image" />

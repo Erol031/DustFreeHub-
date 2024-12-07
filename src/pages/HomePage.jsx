@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../pages/HomePage.module.css";
 import logo from "../assets/dustfreehublogo.png";
 import homeImage from "../assets/homeImage.jpg";
+import google from "../assets/google.webp";
+import facebook from "../assets/facebook.png";
 import { useNavigate } from "react-router-dom";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
@@ -26,7 +28,7 @@ function HomePage() {
             );
 
             console.log("Google Sign-In Success:", user);
-            navigate("/home");
+            navigate(-1);
         } catch (error) {
             console.error("Google Sign-In Error:", error.message);
         }
@@ -55,21 +57,21 @@ function HomePage() {
                         </div>
                         <div className={styles.loginContent}>
                             <div className={styles.signInGoogle} onClick={handleGoogleSignIn}>
-                                <i id={styles.icon} className="fa-brands fa-google"></i>
+                                <img src={google} alt="Google" />
                                 <div className={styles.textHolder}>
                                     <span>Continue with Google</span>
                                 </div>
                             </div>
                             <div className={styles.signInFacebook}>
-                                <i id={styles.icon} className="fa-brands fa-facebook"></i>
+                                <img src={facebook} alt="Facebook" />
                                 <div className={styles.textHolder}>
                                     <span>Continue with Facebook</span>
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.loginFooter}>
+                        {/* <div className={styles.loginFooter}>
                             <span onClick={handleSignup}>Sign up</span>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

@@ -154,3 +154,12 @@
     font-size: 1rem;
     cursor: pointer;
 }
+
+.signInGoogle img{
+    width: 1.2em;
+    height: auto;
+}
+
+.signInFacebook img{
+    width: 1.2em;
+}

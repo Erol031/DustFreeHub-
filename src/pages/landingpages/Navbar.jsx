@@ -3,12 +3,15 @@ import { useNavigate } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import styles from "./Navbar.module.css"; 
 import logo from "../../assets/dustfreehublogo.png";
-import { db } from "../../firebase/firebase";
+import { auth, db } from "../../firebase/firebase";
 
-function Navbar() {
+function Navbar({ user }) {
   const navigate = useNavigate();
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isDropdownVisibleProfile, setIsDropdownVisibleProfile] = useState(false);
   const [categories, setCategories] = useState([]);
+
+  console.log(user);
 
   // Fetch categories from Firestore
   useEffect(() => {
@@ -37,11 +40,27 @@ function Navbar() {
     setIsDropdownVisible(false);
   };
 
+  const handleMouseEnterProfile = () => {
+    setIsDropdownVisibleProfile(true);
+  };
+
+  const handleMouseLeaveProfile = () => {
+    setIsDropdownVisibleProfile(false);
+  };
+
+  const handleLogout = () => {
+    auth.signOut().then(() => {
+      navigate("/");
+    }).catch((error) => {
+      console.error("Logout Error:", error.message);
+    });
+  }
+
   return (
     <div className={styles.header}>
-      <img src={logo} alt="Dust Free Hub Logo" className={styles.dustLogo} onClick={() => handleNavigation("/home")}/>
+      <img src={logo} alt="Dust Free Hub Logo" className={styles.dustLogo} onClick={() => handleNavigation("/home")} />
       <div className={styles.navbar}>
-        <span onClick={() => handleNavigation("/home")}>Home</span>
+        <span onClick={() => handleNavigation("/")}>Home</span>
 
         <span
           className={styles.navItemWithDropdown}
@@ -52,19 +71,13 @@ function Navbar() {
           {isDropdownVisible && (
             <div className={styles.dropdown}>
               {/* Add "All" option to show all categories */}
-              <span
-                onClick={() => handleNavigation("/explore")}
-              >
-                All Cleaning
-              </span>
+              <span onClick={() => handleNavigation("/explore")}>All Cleaning</span>
 
               {/* Dynamically generate dropdown options with docuID */}
               {categories.map((category) => (
                 <span
                   key={category.id}
-                  onClick={() =>
-                    handleNavigation(`/explore?category=${category.id}`)
-                  }
+                  onClick={() => handleNavigation(`/explore?category=${category.id}`)}
                 >
                   {category.name}
                 </span>
@@ -76,8 +89,28 @@ function Navbar() {
         <span onClick={() => handleNavigation("/about")}>About</span>
         <span onClick={() => handleNavigation("/contact")}>Contact</span>
       </div>
+      <div className={styles.userDetailsHolder}>
+        {user ? (
+          <div
+            className={styles.navItemWithDropdown}
+            onMouseEnter={handleMouseEnterProfile}
+            onMouseLeave={handleMouseLeaveProfile}
+          >
+            <i className="fa-solid fa-user" style={{fontSize:"1.5rem", color:"white", textShadow: "0 0 3px black", cursor:"pointer"}}></i>
+            {isDropdownVisibleProfile && (
+              <div className={styles.dropdownProfile}>
+                <span onClick={() => handleNavigation("/profiledetails")}>Profile</span>
+                <span onClick={handleLogout}>Logout</span>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className={styles.loginButton} onClick={() => handleNavigation("/login")}>Login</div>
+        )}
+      </div>
     </div>
   );
 }
 
 export default Navbar;
+

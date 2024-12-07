@@ -5,7 +5,7 @@ import home from "../../assets/home.webp";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
-function HomePage() {
+function HomePage({user}) {
 
     const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ function HomePage() {
     return (
         <div className={styles.pageContainer}>
             <div className={styles.pageContent}>
-                <Navbar/>
+                <Navbar user={user}/>
                 <div className={styles.content}>
                     <div className={styles.designCircle}></div>
                     <div className={styles.designCircle2}></div>

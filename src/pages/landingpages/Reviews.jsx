@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { getAuth } from "firebase/auth";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { db } from "../../firebase/firebase";
 import { doc, getDoc, updateDoc, arrayUnion, onSnapshot } from "firebase/firestore";
 import styles from "./Reviews.module.css";
 import Navbar from "./Navbar";
 
-function Reviews() {
+function Reviews({ user }) {
     const [serviceName, setServiceName] = useState(null);
     const [reviews, setReviews] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [showLoginModal, setShowLoginModal] = useState(false);
     const [selectedRating, setSelectedRating] = useState(0);
     const [authEmail, setAuthEmail] = useState(null);
     const [comment, setComment] = useState("");
     const location = useLocation();
+    const navigate = useNavigate();
 
     // Extract serviceId from query parameter
     const queryParams = new URLSearchParams(location.search);
@@ -139,7 +141,7 @@ function Reviews() {
         <>
             <div className={styles.pageContainer}>
                 <div className={styles.pageContent}>
-                    <Navbar />
+                    <Navbar user={user}/>
                     <div className={styles.content}>
                         <div className={styles.contentHeader}>What our customers think about</div>
                         <div className={styles.placeHolder}>
@@ -148,7 +150,7 @@ function Reviews() {
                             </div>
                             <div
                                 className={styles.dropReviewButton}
-                                onClick={() => setShowModal(true)}
+                                onClick={user ? () => setShowModal(true) : () => setShowLoginModal(true)}
                             >
                                 Drop a Review
                             </div>
@@ -218,6 +220,29 @@ function Reviews() {
                                             onClick={handleReviewSubmit}
                                         >
                                             Submit Review
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                    {showLoginModal && (
+                        <div className={styles.modalOverlay}>
+                            <div className={styles.modalContainer}>
+                                <button
+                                    className={styles.closeButton}
+                                    onClick={() => setShowLoginModal(false)}
+                                >
+                                    &times;
+                                </button>
+                                <div className={styles.modalHeader}>Sign in to Dust Free Hub!</div>
+                                <div className={styles.modalContent}>
+                                    <div className={styles.inputGroup}>
+                                        <button
+                                            className={styles.submitButton}
+                                            onClick={() => {navigate("/login")}}
+                                        >
+                                            Cotinue to Login
                                         </button>
                                     </div>
                                 </div>

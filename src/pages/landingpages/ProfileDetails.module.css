@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.pageContainer {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(250, 250, 250);
+}
+
+.pageContent {
+    /* border: 1px solid black; */
+    height: 100vh;
+    width: 100%; /* Make width responsive */
+    max-width: 83em; /* Set max width to 80em */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    padding-top: 1rem;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 1rem;
+}
+
+.content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+}
+
+.userCard{
+    width: 100%;
+    height: 15em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.leftBox {
+    width: 15em;
+    height: 100%;
+    border: 1rem solid #8ab934;
+    background-color: #f0ecec;
+    border-radius: 1rem;
+    z-index: 2;
+    transition: filter 0.3s ease;
+    cursor: pointer;
+}
+
+.leftBox:hover {
+    filter: brightness(0.9);
+}
+
+.rightBox{
+    width: 50em;
+    height: 95%;
+    background-color: #253d5e;
+    border-radius: 1rem;
+    margin-left: -5px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.rightBox span{
+    color: white;
+    font-size: 2rem;
+}
+
+.secondBox{
+    padding: 2rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    gap: 3rem;
+}
+
+.bookingHolder{
+    width: 50%;
+}
+
+.bookingHolder,.historyHolder span{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #253d5e;
+}
+
+.historyHolder{
+    width: 50%;
+}
+
+.bookingCard{
+    width: 100%;
+    padding: 1rem;
+    background-color: #8ab934;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.booking{
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    align-items: center;
+    font-size: 1rem;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.textservice{
+    font-size: .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status{
+    background-color: rgba(37, 61, 94, 0.5); 
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    font-size: .6rem;
+}
+
+.booking i{
+    font-size: 1.5rem;
+    color: red;
+}
+
+.moreBook{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: start;
+    text-align: center;
+}
+
+.status {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+    color: white; /* Ensures the text is visible */
+    text-align: center;
+}
+
+/* Colors for each status */
+.pending {
+    background-color: rgba(255, 165, 0, 0.7); /* Orange for pending */
+}
+
+.inProgress {
+    background-color: rgba(37, 94, 61, 0.7); /* Green for in progress */
+}
+
+.rejected {
+    background-color: rgba(255, 0, 0, 0.7); /* Red for rejected */
+}
+
+/* Default fallback */
+.defaultStatus {
+    background-color: rgba(128, 128, 128, 0.5); /* Gray for unexpected status */
+}

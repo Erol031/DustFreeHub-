@@ -1,23 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .header {
     width: 100%;
-    padding-top: 1rem;
     box-sizing: border-box;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    align-items: end;
-    margin-bottom: 1rem;
+    padding: 1rem;
 }
 
 .navbar {
-    margin-right: 20em;
     color: #6d6d6d;
-    width: 25em;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    position: relative; /* Important for dropdown positioning */
+    position: relative; 
 }
 
 .navbar span {
@@ -53,7 +55,23 @@
     text-align: left;
 }
 
-/* Dropdown items */
+.dropdownProfile{
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%; /* Aligns dropdown below the "Explore" text */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 12em;
+    text-align: left;
+}
+
 .dropdown span {
     padding: 0.5rem 1rem;
     color: #6d6d6d;
@@ -69,4 +87,43 @@
 /* Show dropdown on hover */
 .navItemWithDropdown:hover .dropdown {
     display: flex; /* Flex for vertical stacking */
+}
+
+/* Dropdown items */
+.dropdownProfile span {
+    padding: 0.5rem 1rem;
+    color: #6d6d6d;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.dropdownProfile span:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+}
+
+/* Show dropdown on hover */
+.navItemWithDropdown:hover .dropdownProfile {
+    display: flex; /* Flex for vertical stacking */
+}
+
+
+
+.userDetailsHolder{
+    z-index: 100;
+    color: black;
+}
+
+.loginButton{
+    padding: .5rem 1.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.loginButton:hover{
+    background-color: rgb(210, 210, 210);
 }
