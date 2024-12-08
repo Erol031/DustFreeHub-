@@ -103,6 +103,7 @@ function Profile({user}) {
     
         const formData = new FormData(e.target);
         const bookingData = {
+            email: user.email,
             address: formData.get("address"),
             bookingDate: formData.get("bookingDate"),
             bookingTime: formData.get("bookingTime"),
