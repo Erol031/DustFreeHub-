@@ -34,6 +34,29 @@ function HomePage() {
         }
     };
 
+    const handleFacebookSignIn = async () => {
+        const provider = new FacebookAuthProvider();
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const user = result.user;
+    
+          // Store user details in Firestore
+          await setDoc(
+            doc(db, "users", user.uid),
+            {
+              id: user.uid,
+              email: user.email,
+            },
+            { merge: true }
+          );
+    
+          console.log("Facebook Sign-In Success:", user);
+          navigate(-1);
+        } catch (error) {
+          console.error("Facebook Sign-In Error:", error.message);
+        }      
+    };
+
     const handleSignup = () => {
         navigate("/signup");
     }
@@ -62,12 +85,12 @@ function HomePage() {
                                     <span>Continue with Google</span>
                                 </div>
                             </div>
-                            <div className={styles.signInFacebook}>
+                            {/* <div className={styles.signInFacebook} onClick={handleFacebookSignIn}>
                                 <img src={facebook} alt="Facebook" />
                                 <div className={styles.textHolder}>
                                     <span>Continue with Facebook</span>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         {/* <div className={styles.loginFooter}>
                             <span onClick={handleSignup}>Sign up</span>
