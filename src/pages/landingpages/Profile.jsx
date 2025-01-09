@@ -310,7 +310,8 @@ function Profile({user}) {
                                                 type="tel"
                                                 name="contactNumber"
                                                 className={styles.dateBox}
-                                                title="Please enter a valid phone number"
+                                                pattern="\d{11}"
+                                                title="Please enter an 11-digit phone number"
                                                 required
                                             />
                                         </div>
